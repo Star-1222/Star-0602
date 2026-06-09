@@ -1,0 +1,18 @@
+# 输入初始高度
+h = float(input())
+
+# 初始化总路程和当前高度
+total = h  # 第一次下落
+current_height = h
+
+# 从第一次落地后开始，反弹9次（第10次落地前）
+for i in range(1, 10):  # i=1到9，表示第i次反弹
+    current_height /= 2  # 反弹高度
+    total += current_height * 2  # 弹起和落下
+
+# 第10次反弹的高度
+tenth_height = h / (2 ** 10)
+
+# 输出，保留六位小数
+print(f"Total of road is {total:.6f}")
+print(f"The tenth is {tenth_height:.6f} meter")
